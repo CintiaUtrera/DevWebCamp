@@ -3,4 +3,7 @@
 
 .auth{
     @include m.contenedor;
+    &__heading{
+        @include m.nombre-pagina;
+    }
 }
