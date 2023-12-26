@@ -5,7 +5,7 @@
     <form class="formulario" action="">
         <div class="formulario__campo">
             <label for="email" class="formulario__label">Email</label>
-            <input type="email" class="formulario__input" placeholder="Tu Email" id="email" name="email" />
+            <input type="email" class="formulario__input"  id="email" name="email" />
         </div>
         <div class="formulario__campo">
             <label for="password" class="formulario__label">Password</label>
