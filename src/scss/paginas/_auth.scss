@@ -1,8 +1,8 @@
 @use 'base/mixins' as m;
-@use 'base/variables' as v;
+
 
 .auth{
-    @include m.contenedor;
+    @include m.contenedor-sm;
     &__heading{
         @include m.nombre-pagina;
     }
