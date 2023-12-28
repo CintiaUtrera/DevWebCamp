@@ -68,3 +68,11 @@
     margin: 2rem 0 2rem 0;
     text-align: center;
 }
+
+@mixin texto-fluido($min, $max){
+    font-size: clamp($min, -0.8rem + 10vh ,$max);
+}
+
+@mixin texto-degradado{
+
+}
