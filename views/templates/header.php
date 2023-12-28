@@ -7,7 +7,7 @@
         <div class="header__contenido">
             <a href="/">
                 <h1 class="header__logo">&#60;DevWebCamp/></h1>
-                <p class="header__texto">Marzo 5-6 - 2024</p>
+                <p class="header__texto">Marzo 5-6 / 2024</p>
                 <p class="header__texto header__texto--modalidad">En Línea - Presencial</p>
                 <a href="/registro" class="header__boton">Comprar Pase</a>
             </a>
