@@ -14,3 +14,14 @@
         </div>
     </div>
 </header>
+<div class="barra">
+    <div class="barra__contenido">
+        <a href="/"><h2 class="barra__logo" >&#60;DevWebCamp/></h2></a>
+        <nav class="navegacion">
+            <a class="navegacion__enlace" href="/devwebcamp">Evento</a>
+            <a class="navegacion__enlace" href="/paquetes">Paquetes</a>
+            <a class="navegacion__enlace" href="/workshops-conferencias">Workshops / Conferencias</a>
+            <a class="navegacion__enlace" href="/registro">Comprar Pase</a>
+        </nav>
+    </div>
+</div>
