@@ -63,7 +63,7 @@ class AuthController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_start();
             $_SESSION = [];
-            header('Location: /login');
+            header('Location: /');
         }
        
     }
@@ -174,7 +174,7 @@ class AuthController {
 
         $token_valido = true;
 
-        if(!$token) header('Location: /login');
+        if(!$token) header('Location: /');
 
         // Identificar el usuario con este token
         $usuario = Usuario::where('token', $token);
