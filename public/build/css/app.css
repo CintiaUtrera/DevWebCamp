@@ -722,6 +722,7 @@ h3 {
 .dashboard__submit--logout:hover {
   color: #007df4;
 }
+<<<<<<< HEAD
 .dashboard__grid {
   display: flex;
   flex: 1;
@@ -767,4 +768,6 @@ h3 {
     padding: 1rem 5rem 3rem 5rem;
   }
 }
+=======
+>>>>>>> 19fcdf88bd3f9507caaae42d72f046913bca6c84
 /*# sourceMappingURL=app.css.map */
