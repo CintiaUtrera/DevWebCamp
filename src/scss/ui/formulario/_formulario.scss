@@ -33,6 +33,12 @@
         padding: 1rem;
         border: 1px solid darken(v.$gris-claro, 20);
         border-radius: .5rem;
+
+        &--file{
+            border: none;
+        }
+
+
     }
     &__submit{
         @include m.boton(v.$azul, v.$blanco);
