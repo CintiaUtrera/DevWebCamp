@@ -31,8 +31,68 @@
         <input type="text" class="formulario__input" id="tags_input" placeholder="Ej: Node.js, PHP, Laravel, UX / UI" />
 
         <div id="tags" class="formulario__listado">
-            <input type="hidden" name="tags" value="<?php echo $ponente->tags ?? ''; ?>">
+            <input type="hidden" name="tags" value="<?php echo $ponente->tags ?? ''; ?>" />
         </div>
     
+    </div>
+</fieldset>
+
+
+
+<fieldset class="formulario__fieldset">
+    <legend class="formulario__legend">Redes Sociales</legend>
+
+    <div class="formulario__campo">
+        <div class="formulario__contenedor-icono">
+        <div class="formulario__icono">
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+        <input type="text" class="formulario__input--sociales"  name="redes[facebook]" value="<?php echo $ponente->facebook ?? ''; ?>" />
+    </div>
+    </div>
+
+    <div class="formulario__campo">
+        <div class="formulario__contenedor-icono">
+        <div class="formulario__icono">
+            <i class="fa-brands fa-twitter"></i>
+        </div>
+        <input type="text" class="formulario__input--sociales"  name="redes[twitter]" value="<?php echo $ponente->twitter ?? ''; ?>" />
+    </div>
+    </div>
+
+    <div class="formulario__campo">
+        <div class="formulario__contenedor-icono">
+        <div class="formulario__icono">
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+        <input type="text" class="formulario__input--sociales"  name="redes[youtube]" value="<?php echo $ponente->youtube ?? ''; ?>" />
+    </div>
+    </div>
+
+    <div class="formulario__campo">
+        <div class="formulario__contenedor-icono">
+        <div class="formulario__icono">
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+        <input type="text" class="formulario__input--sociales"  name="redes[instagram]" value="<?php echo $ponente->instagram ?? ''; ?>" />
+    </div>
+    </div>
+
+    <div class="formulario__campo">
+        <div class="formulario__contenedor-icono">
+        <div class="formulario__icono">
+            <i class="fa-brands fa-github"></i>
+        </div>
+        <input type="text" class="formulario__input--sociales"  name="redes[github]" value="<?php echo $ponente->github ?? ''; ?>" />
+    </div>
+    </div>
+
+    <div class="formulario__campo">
+        <div class="formulario__contenedor-icono">
+        <div class="formulario__icono">
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <input type="text" class="formulario__input--sociales"  name="redes[linkedin]" value="<?php echo $ponente->linkedin?? ''; ?>" />
+    </div>
     </div>
 </fieldset>
