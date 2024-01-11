@@ -1,5 +1,6 @@
 <?php
 
+
 function debuguear($variable) : string {
     echo "<pre>";
     var_dump($variable);
@@ -11,6 +12,5 @@ function s($html) : string {
     return $s;
 }
 
-function pagina_actual($path){
-    return str_contains( $_SERVER['PATH_INFO'], $path ) ? true : false;
-}
+
+
