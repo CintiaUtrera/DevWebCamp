@@ -57,7 +57,7 @@
         <div class="formulario__icono">
             <i class="fa-brands fa-facebook"></i>
         </div>
-        <input type="text" class="formulario__input--sociales"  name="redes[facebook]" value="<?php echo $ponente->facebook ?? ''; ?>" />
+        <input type="text" class="formulario__input--sociales"  name="redes[facebook]" value="<?php echo $redes->facebook ?? ''; ?>" />
     </div>
     </div>
 
@@ -66,7 +66,7 @@
         <div class="formulario__icono">
             <i class="fa-brands fa-twitter"></i>
         </div>
-        <input type="text" class="formulario__input--sociales"  name="redes[twitter]" value="<?php echo $ponente->twitter ?? ''; ?>" />
+        <input type="text" class="formulario__input--sociales"  name="redes[twitter]" value="<?php echo $redes->twitter ?? ''; ?>" />
     </div>
     </div>
 
@@ -75,7 +75,7 @@
         <div class="formulario__icono">
             <i class="fa-brands fa-youtube"></i>
         </div>
-        <input type="text" class="formulario__input--sociales"  name="redes[youtube]" value="<?php echo $ponente->youtube ?? ''; ?>" />
+        <input type="text" class="formulario__input--sociales"  name="redes[youtube]" value="<?php echo $redes->youtube ?? ''; ?>" />
     </div>
     </div>
 
@@ -84,7 +84,7 @@
         <div class="formulario__icono">
             <i class="fa-brands fa-instagram"></i>
         </div>
-        <input type="text" class="formulario__input--sociales"  name="redes[instagram]" value="<?php echo $ponente->instagram ?? ''; ?>" />
+        <input type="text" class="formulario__input--sociales"  name="redes[instagram]" value="<?php echo $redes->instagram ?? ''; ?>" />
     </div>
     </div>
 
@@ -93,7 +93,7 @@
         <div class="formulario__icono">
             <i class="fa-brands fa-github"></i>
         </div>
-        <input type="text" class="formulario__input--sociales"  name="redes[github]" value="<?php echo $ponente->github ?? ''; ?>" />
+        <input type="text" class="formulario__input--sociales"  name="redes[github]" value="<?php echo $redes->github ?? ''; ?>" />
     </div>
     </div>
 
@@ -102,7 +102,7 @@
         <div class="formulario__icono">
             <i class="fa-brands fa-linkedin"></i>
         </div>
-        <input type="text" class="formulario__input--sociales"  name="redes[linkedin]" value="<?php echo $ponente->linkedin?? ''; ?>" />
+        <input type="text" class="formulario__input--sociales"  name="redes[linkedin]" value="<?php echo $redes->linkedin?? ''; ?>" />
     </div>
     </div>
 </fieldset>
