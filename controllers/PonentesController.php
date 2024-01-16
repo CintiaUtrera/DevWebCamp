@@ -16,6 +16,7 @@ class PonentesController{
     }
 
 
+
     public static function crear(Router $router) {
         $alertas = [];
         $ponente = new Ponente;
@@ -65,5 +66,32 @@ class PonentesController{
             'ponente' => $ponente
         ]);
     }
+
+
+
+    public static function editar(Router $router) {
+        $alertas = [];
+        // Validar eñ Id
+        $id = $_GET['id'];
+        $id = filter_var($id, FILTER_VALIDATE_INT);
+
+        if(!$id){
+            header('Location: /admin/ponentes');
+        }
+
+        //obtener ponente Editar
+        $ponente = Ponente::find($id);
+
+        if(!$ponente){
+            header('Location: /admin/ponentes');
+        }
+        
+        $router->render('admin/ponentes/editar', [
+            'titulo' => 'Actualizar Ponente',
+            'ponente' => $ponente,
+            'alertas' => $alertas 
+        ]);
+    }
+
 }
 
