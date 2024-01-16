@@ -111,7 +111,7 @@ class PonentesController{
             } else{
                 $_POST['imagen'] = $ponente->imagen_actual;
             }
-            
+
             $_POST['redes'] = json_encode($_POST['redes'], JSON_UNESCAPED_SLASHES);
             $ponente->sincronizar($_POST);
 
@@ -138,6 +138,25 @@ class PonentesController{
             'alertas' => $alertas,
             'redes' => $redes 
         ]);
+    }
+
+
+
+    public static function eliminar(Router $router) {
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $id = $_POST['id'];
+            $ponente = Ponente::find($id);
+
+            if(!isset($ponente)){
+                header('Location: /admin/ponentes');
+            }
+
+            $resultado = $ponente->eliminar();
+
+            if($resultado){
+                header('Location: /admin/ponentes');
+            }
+        }
     }
 
 }
