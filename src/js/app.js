@@ -1,6 +1,9 @@
+
+
 window.addEventListener('load', function() {
     paginaActual();
 });
+
 
 function paginaActual() {
     const urlActual = window.location;
