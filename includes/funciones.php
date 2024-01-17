@@ -13,4 +13,13 @@ function s($html) : string {
 }
 
 
+function is_auth() : bool {
+    session_start();
+    return isset($_SESSION['nombre']) && !empty($_SESSION);
+}
 
+
+function is_admin() : bool {
+    session_start();
+    return isset($_SESSION['admin']) && !empty($_SESSION['admin']);
+}
