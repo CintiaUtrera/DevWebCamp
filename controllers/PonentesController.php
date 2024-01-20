@@ -29,7 +29,8 @@ class PonentesController{
 
         $router->render('admin/ponentes/index', [
             'titulo' => 'Ponentes / Conferencias',
-            'ponentes' => $ponentes
+            'ponentes' => $ponentes,
+            'paginacion' => $paginacion->paginacion()
         ]);
     }
 
