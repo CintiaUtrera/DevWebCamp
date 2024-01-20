@@ -34,7 +34,11 @@ class Paginacion{
     }
 
     public function enlace_anteriror(){
-
+        $html = '';
+        if($this->pagina_anterior()){
+            $html .= "<a class=\"paginacion__enlace paginacion__enlace--texto\" href=\"?page={$this->pagina_anterior()}\">&laquo; Anterior</a>";
+        }
+        return $html;
     }
 
     public function enlace_siguiente(){ 
@@ -49,6 +53,7 @@ class Paginacion{
         $html = '';
         if($this->total_registros > 1){
             $html .= '<div class="paginacion">';
+            $html .= $this->enlace_anteriror();
             $html .= $this->enlace_siguiente();
             $html .= '</div>';
         }
