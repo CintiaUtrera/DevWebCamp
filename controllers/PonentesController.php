@@ -18,10 +18,9 @@ class PonentesController{
 
         $registros_por_pagina = 10;
         $total = Ponente::total();
-        
         $paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total);
 
-        $ponentes = Ponente::all();
+        $ponentes = Ponente::paginar($registros_por_pagina, $paginacion->offset());
 
         if(!is_admin()){
             header('Location: /login');
