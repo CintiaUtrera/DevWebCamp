@@ -917,6 +917,7 @@ h3 {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .paginacion {
@@ -935,5 +936,24 @@ h3 {
 .paginacion__enlace--texto:hover {
   background-color: #007df4;
   color: #FFFFFF;
+}
+.paginacion__enlace--numero {
+  font-weight: 700;
+  display: none;
+}
+@media (min-width: 768px) {
+  .paginacion__enlace--numero {
+    display: inline;
+  }
+}
+.paginacion__enlace--actual {
+  color: #64748B;
+  font-weight: 700;
+  display: none;
+}
+@media (min-width: 768px) {
+  .paginacion__enlace--actual {
+    display: inline;
+  }
 }
 /*# sourceMappingURL=app.css.map */
