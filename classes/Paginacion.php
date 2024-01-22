@@ -15,7 +15,7 @@ class Paginacion{
     }
 
     public function offset(){
-        return $this->registros_por_pagina = ($this->pagina_actual - 1);
+        return $this->registros_por_pagina * ($this->pagina_actual - 1);
     }
 
     public function total_paginas(){
