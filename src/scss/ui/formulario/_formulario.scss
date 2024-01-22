@@ -16,20 +16,19 @@
         margin-bottom: 2rem;
     }
 
-
-
     &__campo{
         display: flex;
         flex-direction: column;
         gap: 1rem;
         margin: 1.5rem 0;
     }
+
     &__contenedor-icono{
         display: flex;
         border-radius: .5rem;
         overflow: hidden;
-
     }
+
     &__icono{
         background-color: v.$gris-oscuro;
         width: 4rem;
@@ -40,15 +39,17 @@
         i{
             color: v.$blanco;
             font-size: 2rem;
-
         }
     }
+
     &__label{
         display: block;
         font-size: 1.8rem;
         color: rgba(v.$negro, .8);
     }
-    &__input{
+
+    &__input,
+    &__select {
         padding: 1rem;
         border: 1px solid darken(v.$gris-claro, 20);
         border-radius: .5rem;
