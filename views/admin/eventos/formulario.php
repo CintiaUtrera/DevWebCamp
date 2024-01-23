@@ -34,4 +34,14 @@
     </div>
 
 
+    <div class="formulario__campo" id="horas">
+        <label for="" class="formulario__label">Seleccionar Hora</label>
+
+        <ul class="horas">
+                <?php foreach($horas as $hora) { ?>
+                    <li class="horas__hora"><?php echo $hora->hora; ?></li>
+                <?php } ?>
+        </ul>
+    </div>
+
 </fieldset>
