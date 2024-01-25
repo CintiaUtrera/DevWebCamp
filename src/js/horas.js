@@ -16,7 +16,7 @@
 
         function terminoBusqueda(e){
             busqueda(e.target.name) = e.target.value;
-            
+
         }
     }
 })();
