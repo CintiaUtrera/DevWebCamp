@@ -48,7 +48,14 @@
 
 
         function seleccionarHora(e){
-            inputHiddenHora.value = e.target.dataset.horaId
+            // deshabilitar hora previa, si hay un nuevo click
+            const horaPrevia = document.querySelector('.horas__hora--seleccionada')
+            if(horaPrevia){
+                horaPrevia.classList.remove('horas__hora--seleccionada');
+            }
+            // Agregar clase de seleccionado
+            e.target.classList.add('horas__hora--seleccionada');
+            inputHiddenHora.value = e.target.dataset.horaId;
         }
     }
 })();
