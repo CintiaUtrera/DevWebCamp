@@ -2,6 +2,7 @@
     const horas = document.querySelector('#horas')
 
     if(horas){
+
         let busqueda = {
             categoria_id: '',
             dia: ''
@@ -15,8 +16,29 @@
         dias.forEach( dia => dia.addEventListener('change', terminoBusqueda))
 
         function terminoBusqueda(e){
-            busqueda(e.target.name) = e.target.value;
+            busqueda[e.target.name] = e.target.value;
 
+            if(Object.values(busqueda).includes('')){
+                return
+            }
+
+            buscarEventos();
+        }
+
+
+        async function buscarEventos(){
+            const { dia, categoria_id } = busqueda;
+            const url =  `/api/eventos-horario?dia_id=${dia}&categoria_id=${categoria_id}`;
+            
+            const resultado = await fetch(url);
+            const eventos = await resultado.json();
+
+            obtenerHorasDisponibles();
+        }
+
+
+        function obtenerHorasDisponibles(){
+            
         }
     }
 })();

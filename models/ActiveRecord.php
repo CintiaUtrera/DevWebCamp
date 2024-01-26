@@ -84,9 +84,9 @@ class ActiveRecord {
     // Sincroniza BD con Objetos en memoria
     public function sincronizar($args=[]) { 
         foreach($args as $key => $value) {
-          if(property_exists($this, $key) && !is_null($value)) {
+        if(property_exists($this, $key) && !is_null($value)) {
             $this->$key = $value;
-          }
+        }
         }
     }
 
@@ -105,35 +105,35 @@ class ActiveRecord {
 
     // Obtener todos los Registros
     public static function all($orden = 'DESC') {
-        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id ${orden}";
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id {$orden}";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
 
     // Busca un registro por su id
     public static function find($id) {
-        $query = "SELECT * FROM " . static::$tabla  ." WHERE id = ${id}";
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE id = {$id}";
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }
 
     // Obtener Registros con cierta cantidad
     public static function get($limite) {
-        $query = "SELECT * FROM " . static::$tabla . " LIMIT ${limite} ORDER BY id DESC" ;
+        $query = "SELECT * FROM " . static::$tabla . " LIMIT {$limite} ORDER BY id DESC" ;
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado );
     }
 
     // paginar los registros 
     public static function paginar($por_pagina, $offset){
-        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC LIMIT ${por_pagina} OFFSET ${offset} " ;
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC LIMIT {$por_pagina} OFFSET {$offset} " ;
         $resultado = self::consultarSQL($query);
         return $resultado; 
     }
 
     // Busqueda Where con Columna 
     public static function where($columna, $valor) {
-        $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
+        $query = "SELECT * FROM " . static::$tabla . " WHERE {$columna} = '{$valor}'";
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }
@@ -141,26 +141,28 @@ class ActiveRecord {
     // Busqueda Where con multiples opciones
     public static function whereArray($array = []) {
         $query = "SELECT * FROM " . static::$tabla . " WHERE ";
-        foreach($array as $key => $value){
+        foreach($array as $key => $value) {
             if($key == array_key_last($array)) {
-                $query .= " ${key}  = '${value}'";
-            } else{
-                $query .= " ${key}  = '${value}' AND ";
+                $query .= " {$key} = '{$value}'";
+            } else {
+                $query .= " {$key} = '{$value}' AND ";
             }
         }
+
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }
 
     //Traer un total de registros
-    public static function total(){
+    public static function total($columna = '', $valor = '') {
         $query = "SELECT COUNT(*) FROM " . static::$tabla;
+        if($columna) {
+            $query .= " WHERE {$columna} = {$valor}";
+        }
         $resultado = self::$db->query($query);
         $total = $resultado->fetch_array();
 
         return array_shift($total);
-
-        
     }
 
     // crea un nuevo registro
@@ -180,8 +182,8 @@ class ActiveRecord {
         // Resultado de la consulta
         $resultado = self::$db->query($query);
         return [
-           'resultado' =>  $resultado,
-           'id' => self::$db->insert_id
+        'resultado' =>  $resultado,
+        'id' => self::$db->insert_id
         ];
     }
 
