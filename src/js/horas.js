@@ -14,12 +14,20 @@
         const inputHiddenHora = document.querySelector('[name="hora_id"]');
 
 
-
         categoria.addEventListener('change', terminoBusqueda)
-        dias.forEach( dia => dia.addEventListener('change', terminoBusqueda))
+        dias.forEach( dia => dia.addEventListener('change', terminoBusqueda));
 
         function terminoBusqueda(e){
             busqueda[e.target.name] = e.target.value;
+
+            //Reiniciar los campos ocultos y el selector de horas
+            inputHiddenHora.value = '';
+            inputHiddenDia.value = '';
+            const horaPrevia = document.querySelector('.horas__hora--seleccionada')
+            if(horaPrevia){
+                horaPrevia.classList.remove('horas__hora--seleccionada');
+            }
+
 
             if(Object.values(busqueda).includes('')){
                 return
@@ -41,18 +49,21 @@
 
 
         function obtenerHorasDisponibles(eventos){
-            // reinicicar las horas
-            const horasTomadas = eventos.map(evento => evento.hora_id);
-
+            // Reiniciar las horas
             const listadoHoras = document.querySelectorAll('#horas li');
+            listadoHoras.forEach( li => li.classList.add('horas__hora--desabilitada'));
+
+            // comprobar eventos tomados y quitar la vaariable desabilitada
+            const horasTomadas = eventos.map(evento => evento.hora_id);
             const listadoHorasArray = Array.from(listadoHoras);
 
             const resultado = listadoHorasArray.filter( li => !horasTomadas.includes(li.dataset.horaId));
-            resultado.forEach( li => li.classList.remove('horas__hora--deshabilitada'));
+            resultado.forEach( li => li.classList.remove('horas__hora--desabilitada'));
 
-            const horasDisponibles = document.querySelectorAll('#horas li:not(.horas__hora--deshabilitada)');
+            const horasDisponibles = document.querySelectorAll('#horas li:not(.horas__hora--desabilitada)');
             horasDisponibles.forEach(hora => hora.addEventListener('click', seleccionarHora));
 
+            
         }
 
 
@@ -65,6 +76,10 @@
             // Agregar clase de seleccionado
             e.target.classList.add('horas__hora--seleccionada');
             inputHiddenHora.value = e.target.dataset.horaId;
+
+            //Llenar el campo oculto de dia
+            inputHiddenDia.value = document.querySelector('[name="dia"]:checked').value;
+
         }
     }
 })();
