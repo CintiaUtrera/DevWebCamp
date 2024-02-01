@@ -4,8 +4,8 @@
     if(horas){
 
         let busqueda = {
-            categoria_id: +categoria.value || '',
-            dia: +inputHiddenDia.value || ''
+            categoria_id: '',
+            dia: ''
         }
 
         const categoria = document.querySelector('[name="categoria_id"]');
