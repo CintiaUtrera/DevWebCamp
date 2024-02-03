@@ -5,8 +5,9 @@
         let ponentes = [];
         let ponentesFiltrados = [];
 
-        obtenerPonentes();
+        const listadoPonentes = document.querySelector('#listado-ponentes');
 
+        obtenerPonentes();
         ponentesInput.addEventListener('input', buscarPonentes)
 
         async function obtenerPonentes(){
@@ -31,16 +32,45 @@
         function buscarPonentes(e){
             const busqueda = e.target.value;
             
-            if(busqueda.length > 3){
-                const expresion = new RegExp(busqueda, "i");
+            if(busqueda.length >= 3) {
+                const expresion = new RegExp(busqueda.normalize('NFD').replace(/[\u0300-\u036f]/g, ""), "i");
                 ponentesFiltrados = ponentes.filter(ponente => {
-                    if(ponente.nombre.toLowerCase().search(expresion) != -1) {
-                        return ponente;
+                    if(ponente.nombre.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase().search(expresion) != -1) {
+                        return ponente
                     }
-
                 })
-                console.log(ponentesFiltrados);
+            } else {
+                ponentesFiltrados = [];
             }
+
+            mostrarPonentes();
+        }
+
+
+        function mostrarPonentes(){
+            // eliminar elementos en el HTML 
+            while(listadoPonentes.firstChild){
+                listadoPonentes.removeChild(listadoPonentes.firstChild);
+            }
+
+            if(ponentesFiltrados.length > 0){
+                ponentesFiltrados.forEach( ponente => {
+                    const ponenteHtml = document.createElement('LI');
+                    ponenteHtml.classList.add('listado-ponentes__ponente');
+                    ponenteHtml.textContent = ponente.nombre;
+                    ponenteHtml.dataset.ponenteId = ponente.id;
+    
+                    // Añadir al Dom
+                    listadoPonentes.appendChild(ponenteHtml);
+                    
+                });
+            } else{
+                const noResultados = document.createElement('P');
+                noResultados.classList.add('listado-ponentes__no-resultado');
+                noResultados.textContent = "No hay resultados para tu busqueda";
+                listadoPonentes.appendChild(noResultados);
+            }
+            
         }
 
 
