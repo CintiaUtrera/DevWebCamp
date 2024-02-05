@@ -20,7 +20,7 @@
                 <?php foreach($eventos as $evento) { ?>
                     <tr class="table__tr">
                         <td class="table__td"><?php echo $evento->nombre; ?></td>
-                        
+                        <td class="table__td"><?php echo $evento->categoria->nombre; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
