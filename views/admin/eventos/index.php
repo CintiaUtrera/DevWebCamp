@@ -21,6 +21,12 @@
                     <tr class="table__tr">
                         <td class="table__td"><?php echo $evento->nombre; ?></td>
                         <td class="table__td"><?php echo $evento->categoria->nombre; ?></td>
+                        <td class="table__td"><?php echo $evento->dia->nombre . ", " . $evento->hora->hora; ?></td>
+                        <td class="table__td"><?php echo $evento->ponente->nombre . " " . $evento->ponente->apellido; ?></td>
+                        
+                        
+                    
+                    
                     </tr>
                 <?php } ?>
             </tbody>
