@@ -14,8 +14,10 @@
                     <th class="table__th" scope="col">Categoría</th>
                     <th class="table__th" scope="col">Dia - Hora</th>
                     <th class="table__th" scope="col">Ponente</th>
+                    <th class="table__th" scope="col"></th>
                 </tr>
             </thead>
+
             <tbody class="table__tbody">
                 <?php foreach($eventos as $evento) { ?>
                     <tr class="table__tr">
@@ -24,9 +26,14 @@
                         <td class="table__td"><?php echo $evento->dia->nombre . ", " . $evento->hora->hora; ?></td>
                         <td class="table__td"><?php echo $evento->ponente->nombre . " " . $evento->ponente->apellido; ?></td>
                         
-                        
-                    
-                    
+                        <td class="table__td--acciones">
+                            <a class="table__accion table__accion--editar" href="/admin/eventos/editar?id=<?php echo $evento->id; ?>">
+                                <i class="fa-solid fa-pencil"></i> Editar</a>
+                            <form method="POST" action="/admin/eventos/eliminar" class="table__formulario">
+                                <input type="hidden" name="id" value="<?php echo $evento->id;?>">
+                                <button class="table__accion table__accion--eliminar" type="submit"><i class="fa-solid fa-circle-xmark"></i> Eliminar</button>
+                            </form>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>
