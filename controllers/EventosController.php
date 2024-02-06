@@ -78,14 +78,20 @@ class EventosController{
 
     public static function editar(Router $router) {
         $alertas = [];
+        $id = $_GET['id'];
+        $id = filter_var($id, FILTER_VALIDATE_INT);
+        if(!$id){
+            header('Location: /admin/eventos');
+        }
 
         $categorias = Categoria::all('ASC');
-
         $dias = Dia::all('ASC');
-
         $horas = Hora::all('ASC');
 
-        $evento = new Evento;
+        $evento = Evento::find($id);
+        if(!$evento){
+            header('Location: /admin/eventos');
+        }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $evento->sincronizar($_POST);
@@ -99,8 +105,8 @@ class EventosController{
             }
         }
 
-        $router->render('admin/eventos/crear', [
-            'titulo' => 'Registrar Evento',
+        $router->render('admin/eventos/editar', [
+            'titulo' => 'Editar Evento',
             'alertas' => $alertas,
             'categorias' => $categorias,
             'dias' => $dias,
