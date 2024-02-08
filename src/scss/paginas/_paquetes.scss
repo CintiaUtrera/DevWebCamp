@@ -1,0 +1,31 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.paquetes{
+
+    &__grid{
+        @include m.contenedor;
+        @include m.grid(1, 3rem);
+        @include m.tablet {
+            @include m.grid(3, 3rem);
+            align-items: flex-start;
+        }
+    }
+}
+
+.paquete{
+    @include m.card;
+
+    &__lista{
+        @include m.reset-lista;
+        line-height: 2;
+    }
+
+    &__precio {
+        font-size: 4rem;
+        margin: 3rem 0 0 0;
+        color: v.$azul;
+        font-weight: v.$black;
+        text-align: center;
+    }
+}
