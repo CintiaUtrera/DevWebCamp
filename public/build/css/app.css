@@ -419,6 +419,14 @@ h3 {
   font-size: 2.6rem;
   margin: 2rem 0;
 }
+.paquete:nth-child(2) {
+  order: -1;
+}
+@media (min-width: 768px) {
+  .paquete:nth-child(2) {
+    order: unset;
+  }
+}
 .paquete__lista {
   margin: 0;
   padding: 0;
