@@ -55,17 +55,17 @@ class PaginasController {
                 $eventos_formateados['conferencias_s'][] = $evento;
             }
             if($evento->dia_id === "1" && $evento->categoria_id === "2"){
-                $eventos_formateados['conferencias_v'][] = $evento;
+                $eventos_formateados['workshops_v'][] = $evento;
             }
 
             if($evento->dia_id === "2" && $evento->categoria_id === "2"){
-                $eventos_formateados['conferencias_v'][] = $evento;
+                $eventos_formateados['workshops_s'][] = $evento;
             }
         }
 
         $router->render('paginas/conferencias', [
-            'titulo' => 'Conferencias & Workshops'
-
+            'titulo' => 'Conferencias & Workshops',
+            'eventos' => $eventos_formateados
         ]);
     }
 }
