@@ -1,7 +1,7 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as v;
 
-.navegacion{
+.navegacion {
     display: flex;
     flex-direction: column;
     @include m.desktop{
@@ -9,16 +9,16 @@
     }
     &__enlace{
         color: v.$blanco;
-        font-size: 2rem;
-        padding: 2rem;
+        font-size: 1.8rem;
+        padding: 1.8rem;
         font-weight: v.$black;
         text-transform: uppercase;
         text-align: center;
 
+        &--actual,
         &:hover{
             background-color: v.$blanco;
             color: v.$azul;
         }
-
     }
 }
