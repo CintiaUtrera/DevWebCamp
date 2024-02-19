@@ -25,6 +25,12 @@
         #{$modificador}__heading{ // # mezcla entre una variable y un string //
             color: v.$secundario;
         }
+        .evento__informacion{
+            background-color: v.$secundario;
+            &:hover{
+                background-color: darken(v.$secundario, 10%);
+            }
+        }
     }
     .swiper-button-next,
     .swiper-button-prev{
