@@ -11,9 +11,7 @@
                     <p class="evento__hora"><?php echo $evento->hora->hora; ?></p>
                     <div class="evento__informacion">
                         <h4 class="evento__nombre"><?php echo $evento->nombre; ?></h4>
-                        <div class="">
                             <p class="evento__introduccion"><?php echo $evento->descripcion; ?></p>
-                        </div>
 
                         <div class="evento__autor-info">
                             <picture>
