@@ -32,6 +32,7 @@
     <h2 class="speakers__heading">Speakers</h2>
     <p class="speaers__descripcion">Conoce a nuestros expertos de DevWebCamp</p>
 
+    <div class="speakers__grid">
     <?php foreach($ponentes as $ponente) { ?>
         <div class="speaker">
             <picture>
@@ -94,5 +95,6 @@
             </div>
         </div>
     <?php } ?>
+    </div>
 
 </section>
