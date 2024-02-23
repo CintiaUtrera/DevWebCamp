@@ -664,6 +664,19 @@ h3 {
   display: none;
 }
 
+.mapa {
+  height: 45rem;
+  margin-top: 5rem;
+}
+.mapa__heading {
+  margin: 0;
+  text-align: left;
+}
+.mapa__texto {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
 .formulario {
   display: flex;
   flex-direction: column;
