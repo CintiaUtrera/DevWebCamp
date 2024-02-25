@@ -677,6 +677,72 @@ h3 {
   margin: 0;
 }
 
+.boletos__grid {
+  width: min(95%, 60rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.boleto {
+  width: min(100% - 5rem, 65rem);
+  margin: 0 auto;
+  padding: 6rem;
+  border-radius: 2rem;
+  color: #FFFFFF;
+  position: relative;
+}
+.boleto::before, .boleto::after {
+  position: absolute;
+  content: "";
+  background-color: #FFFFFF;
+  width: 5rem;
+  height: 5rem;
+  top: calc(50% - 2.5rem);
+}
+.boleto::before {
+  clip-path: circle(50% at 25% 50%);
+  left: 0;
+}
+.boleto::after {
+  clip-path: circle(50% at 75% 50%);
+  right: 0;
+}
+.boleto--presencial {
+  background-color: hsl(178, 100%, 39%);
+  background-image: radial-gradient(at 97% 12%, hsl(209, 100%, 47%) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(189, 100%, 56%) 0px, transparent 50%), radial-gradient(at 0% 64%, hsl(209, 100%, 47%) 0px, transparent 50%), radial-gradient(at 80% 50%, hsl(178, 100%, 39%) 0px, transparent 50%), radial-gradient(at 0% 100%, hsl(209, 100%, 47%) 0px, transparent 50%), radial-gradient(at 80% 100%, hsl(178, 100%, 39%) 0px, transparent 50%);
+}
+.boleto--virtual {
+  background-color: #00c8c2;
+}
+.boleto--gratis {
+  background-color: #007df4;
+}
+.boleto__logo {
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 2rem;
+  white-space: nowrap;
+  font-size: clamp(2rem, -0.8rem + 10vh, 4rem);
+}
+@media (min-width: 1024px) {
+  .boleto__logo {
+    text-align: left;
+    margin: 0;
+  }
+}
+.boleto__plan {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 3rem 0 0 0;
+}
+.boleto__precio {
+  margin: 3rem 0 0 0;
+  font-weight: 900;
+  font-size: 4rem;
+}
+
 .formulario {
   display: flex;
   flex-direction: column;
