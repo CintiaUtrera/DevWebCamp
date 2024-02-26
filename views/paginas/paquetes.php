@@ -3,7 +3,7 @@
     <p class="paquetes__descripcion">Compara los paquetes de DevWebCamp</p>
 
     <div class="paquetes__grid">
-        <div class="paquete">
+        <div <?php aos_animacion(); ?> class="paquete">
             <h3 class="paquete_nombre">Pase Gratis</h3>
             <ul class="paquete__lista">
                 <li class="paquete_elemento">Acceso Virtual a DevWebCamp</li>
@@ -11,7 +11,7 @@
             </ul>
         </div>
 
-        <div class="paquete">
+        <div <?php aos_animacion(); ?> class="paquete">
             <h3 class="paquete_nombre">Pase Presencial</h3>
             <ul class="paquete__lista">
                 <li class="paquete_elemento">Acceso Presencial a DevWebCamp</li>
@@ -24,7 +24,7 @@
             </ul>
         </div>
 
-        <div class="paquete">
+        <div <?php aos_animacion(); ?> class="paquete">
             <h3 class="paquete_nombre">Pase Virtual</h3>
             <ul class="paquete__lista">
                 <li class="paquete_elemento">Acceso Virtual a DevWebCamp</li>
