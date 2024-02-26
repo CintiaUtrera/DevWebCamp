@@ -10,4 +10,19 @@ class RegistradosController{
             'titulo' => 'Usuarios Registrados'
         ]);
     }
+
+
+    public static function gratis(Router $router) {
+        
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            if(!is_auth()) {
+                header('Location: /login');
+            }
+
+            $token = uniqid(rand(), true);
+        }
+    }
+
+
+
 }

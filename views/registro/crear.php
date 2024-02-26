@@ -1,13 +1,17 @@
 <main class="registro">
     <h2 class="registro__heading"><?php echo $titulo; ?></h2>
     <p class="registro__descripcion">Elige tu Plan</p>
-    
+
     <div class="paquetes__grid">
         <div <?php aos_animacion(); ?> class="paquete">
             <h3 class="paquete_nombre">Pase Gratis</h3>
             <ul class="paquete__lista">
                 <li class="paquete_elemento">Acceso Virtual a DevWebCamp</li>
                 <p class="paquete__precio">$0</p>
+
+                <form method="POST" action="/finalizar-registro/gratis" class="">
+                    <input type="submit" class="paquetes__submit" value="Inscripción Gragtis" />
+                </form>
             </ul>
         </div>
 
