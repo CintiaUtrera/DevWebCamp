@@ -41,4 +41,29 @@ class RegistroController{
             }
         }
     }
+
+
+    public static function boleto(Router $router) {
+
+        //Validar la URL
+        $id = $_GET['id'];
+        if(!$id || strlen($id) === 8) {
+            header('Location: /');
+        }
+
+        // buscarlo en la base de datos
+        $registro = Registro::where('token', $id);
+        if(!$registro){
+            header('Location: /');
+        }
+
+        
+    
+        $router->render('registro/boleto', [
+            'titulo' => 'Asistencia de DevWebCamp'
+        ]);
+        
+        }
+
+
 }

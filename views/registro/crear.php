@@ -9,7 +9,7 @@
                 <li class="paquete_elemento">Acceso Virtual a DevWebCamp</li>
                 <p class="paquete__precio">$0</p>
 
-                <form method="POST" action="/finalizar-registro/gratis" class="">
+                <form method="POST" action="/finalizar-registro/gratis" >
                     <input type="submit" class="paquetes__submit" value="Inscripción Gragtis" />
                 </form>
             </ul>
