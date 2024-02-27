@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+
 use MVC\Router;
 
 class RegistradosController{
@@ -11,17 +12,6 @@ class RegistradosController{
         ]);
     }
 
-
-    public static function gratis(Router $router) {
-        
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            if(!is_auth()) {
-                header('Location: /login');
-            }
-
-            $token = uniqid(rand(), true);
-        }
-    }
 
 
 
