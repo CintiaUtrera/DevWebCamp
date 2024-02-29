@@ -2,9 +2,10 @@
 
 namespace Controllers;
 
+use Model\Paquete;
 use MVC\Router;
 use Model\Registro;
-
+use Model\Usuario;
 
 class RegistroController{
     public static function crear(Router $router) {
@@ -33,7 +34,7 @@ class RegistroController{
                 'usuario_id' => $_SESSION['id']
             );
 
-            $registro = new Registro('datos');
+            $registro = new Registro($datos);
             $resultado = $registro->guardar();
 
             if($resultado){
@@ -47,7 +48,7 @@ class RegistroController{
 
         //Validar la URL
         $id = $_GET['id'];
-        if(!$id || strlen($id) === 8) {
+        if(!$id || !strlen($id) === 8) {
             header('Location: /');
         }
 
@@ -57,10 +58,15 @@ class RegistroController{
             header('Location: /');
         }
 
-        
-    
+        //llenar las tablas de referencia
+        $registro->usuario = Usuario::find($registro->usuario_id);
+        $registro->paquete = Paquete::find($registro->paquete_id);
+
+
+
         $router->render('registro/boleto', [
-            'titulo' => 'Asistencia de DevWebCamp'
+            'titulo' => 'Asistencia de DevWebCamp',
+            'registro' => $registro
         ]);
         
         }
