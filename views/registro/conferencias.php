@@ -40,6 +40,10 @@
         </main>
         <aside class="registro">
                 <h2 class="registro__heading">Tu Registro</h2>
+
+                <div class="registro__resumen" id="registro-resumen">
+                    
+                </div>
         </aside>
     </div>
     

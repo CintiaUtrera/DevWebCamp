@@ -7,6 +7,7 @@
 
     @include m.tablet{
         display: flex;
+        align-items: flex-start;
         gap: 2rem;
     }
     
@@ -30,6 +31,12 @@
             white-space: nowrap;
             @include m.texto-fluido(2rem, 5rem);
         }
+        &--workshops{
+            color: v.$secundario;
+            white-space: nowrap;
+            @include m.texto-fluido(2rem, 5rem);
+            margin-top: 5rem;
+        }
     }
 
     &__fecha{
@@ -38,8 +45,22 @@
 }
 
 .registro{
+    background-color: v.$gris-claro;
+    padding: 3rem;
+    border-radius: 1rem;
+
+
+
     @include m.tablet{
         flex: 0 0 40%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 3rem;
+        
+    }
+
+    &__heading{
+        margin: 0 0 3rem 0;
     }
 }
 
