@@ -31,6 +31,10 @@
             @include m.texto-fluido(2rem, 5rem);
         }
     }
+
+    &__fecha{
+        margin: 6rem 3rem 0;
+    }
 }
 
 .registro{

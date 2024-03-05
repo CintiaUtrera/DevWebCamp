@@ -1574,6 +1574,9 @@ h3 {
   white-space: nowrap;
   font-size: clamp(2rem, -0.8rem + 10vh, 5rem);
 }
+.eventos-registro__fecha {
+  margin: 6rem 3rem 0;
+}
 
 @media (min-width: 768px) {
   .registro {
