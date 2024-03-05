@@ -14,8 +14,8 @@
             </div>
         
         </main>
-        <aside>
-
+        <aside class="registro">
+                <h2 class="registro__heading">Tu Registro</h2>
         </aside>
     </div>
     
