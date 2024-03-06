@@ -1,3 +1,6 @@
+import Swal from "sweetalert2";
+
+
 (function(){
     let eventos = [];
 
@@ -8,14 +11,27 @@
 
 
     function seleccionarEvento(e){
-        // Deshabilitar el evento
-        e.target.disabled = true
-        eventos = [...eventos, {
-            id: e.target.dataset.id,
-            titulo: e.target.parentElement.querySelector('.evento__nombre').textContent.trim()
-        }]
+        
 
-        mostrarEventos();
+
+        if(eventos.length < 5){
+            // Deshabilitar el evento
+            e.target.disabled = true
+            eventos = [...eventos, {
+                id: e.target.dataset.id,
+                titulo: e.target.parentElement.querySelector('.evento__nombre').textContent.trim()
+            }]
+
+            mostrarEventos();
+        } else {
+            Swal.fire({
+                title: 'Error',
+                text: 'Máximo 5 Eventos por registro',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            })
+        }
+
     }
 
 
