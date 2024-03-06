@@ -1605,6 +1605,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 .registro__evento:nth-child(even) {
   background-color: #edf2f7;
@@ -1612,7 +1613,7 @@ h3 {
 .registro__nombre {
   font-size: 2rem;
   font-weight: 700;
-  margin: 1rem 0;
+  margin: 0;
 }
 .registro__eliminar {
   all: unset;

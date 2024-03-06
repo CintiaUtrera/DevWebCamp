@@ -51,7 +51,11 @@
 
 
     function eliminarEvento(id){
-
+        eventos = eventos.filter( evento => evento.id !== id)
+        const botonAgregar = document.querySelector(`[data-id="${id}"]`) 
+        botonAgregar.disabled = false
+        
+        mostrarEventos();
     }
 
 
