@@ -1601,4 +1601,24 @@ h3 {
 .registro__heading {
   margin: 0 0 3rem 0;
 }
+.registro__evento {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.registro__evento:nth-child(even) {
+  background-color: #edf2f7;
+}
+.registro__nombre {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+.registro__eliminar {
+  all: unset;
+  color: rgb(169, 0, 0);
+}
+.registro__eliminar:hover {
+  cursor: pointer;
+}
 /*# sourceMappingURL=app.css.map */
