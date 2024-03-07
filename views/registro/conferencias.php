@@ -31,7 +31,7 @@
             </div>
 
             <p class="eventos-registro__fecha">Sábado 6 de Noviembre</p>
-            <div class="eventos-registro__grid">
+            <div class="eventos-registro__grid eventos--workshops">
                     <?php foreach($eventos['workshops_s'] as $evento ) { ?>
                         <?php include __DIR__ . '/evento.php'; ?>
                     <?php } ?>

@@ -10,7 +10,7 @@
                 <p class="paquete__precio">$0</p>
 
                 <form method="POST" action="/finalizar-registro/gratis" >
-                    <input type="submit" class="paquetes__submit" value="Inscripción Gragtis" />
+                    <input type="submit" class="paquetes__submit" value="Inscripción Gratis" />
                 </form>
             </ul>
         </div>
