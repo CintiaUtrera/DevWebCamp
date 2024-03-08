@@ -88,6 +88,10 @@
         }
     }
 
+    &__texto{
+        text-align: center;
+    }
+
     &__regalo{
         margin-top: 3rem;
     }
@@ -97,6 +101,7 @@
         font-size: 2.2rem;
         font-weight: v.$bold;
         margin-bottom: 1rem;
+        text-align: center;
         
     }
 

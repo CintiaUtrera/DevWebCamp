@@ -1626,6 +1626,9 @@ h3 {
 .registro__eliminar:hover {
   cursor: pointer;
 }
+.registro__texto {
+  text-align: center;
+}
 .registro__regalo {
   margin-top: 3rem;
 }
@@ -1634,6 +1637,7 @@ h3 {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-align: center;
 }
 .registro__select {
   width: 100%;
