@@ -18,10 +18,9 @@ h3 {
     text-align: center;
 }
 
-[class$="__heading"]{
+[class$="__heading"] {
     @include m.nombre-pagina;
 }
-
-[class$="__descripcion"]{
+[class$="__descripcion"] {
     @include m.descripcion-pagina;
 }

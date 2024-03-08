@@ -47,17 +47,17 @@
     grid-template-columns: repeat($columnas, 1fr);
 }
 
-@mixin contenedor{
+@mixin contenedor {
     width: min(95%, 140rem);
     margin: 0 auto;
 }
 
-@mixin contenedor-md{
+@mixin contenedor-md {
     width: min(95%, 80rem);
     margin: 0 auto;
 }
 
-@mixin contenedor-sm{
+@mixin contenedor-sm {
     width: min(95%, 60rem);
     margin: 0 auto;
 }
@@ -65,49 +65,44 @@
 @mixin headings {
     font-family: v.$fuente_principal;
     font-weight: v.$black;
-    max-width: 2rem 0;
+    margin: 2rem 0;
 }
 
-@mixin nombre-pagina{
+@mixin nombre-pagina {
     @include headings;
-    margin: 2rem 0 2rem 0;
+    margin: 6rem 0 3rem 0;
     text-align: center;
 }
-
-@mixin descripcion-pagina{
+@mixin descripcion-pagina {
     text-align: center;
     font-size: 1.8rem;
     font-weight: v.$delgada;
     color: v.$gris-oscuro;
     margin-bottom: 5rem;
 }
-
-@mixin texto-fluido($min, $max){
-    font-size: clamp($min, -0.8rem + 10vh ,$max);
+@mixin texto-fluido($min, $max) {
+    font-size: clamp($min, -0.8rem + 10vw ,$max);
 }
-
-@mixin texto-degradado($inicio, $final){
+@mixin texto-degradado($inicio, $final) {
     background: linear-gradient(to right, $inicio, $final);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+    color: transparent;
 }
-
-@mixin logo{
+@mixin logo {
     color: v.$blanco;
     text-align: center;
     margin-bottom: 2rem;
     white-space: nowrap;
-    @include desktop{
+    @include desktop {
         text-align: left;
         margin: 0;
     }
 }
+@mixin menu-social($color, $size) {
 
-@mixin menu-social($color, $size){
-    &__enlace{
+    &__enlace {
 
-        &::before{
+        &::before {
             color: $color;
             font-size: $size;
             display: inline-block;
@@ -138,58 +133,62 @@
         }
     }
 
-    &__ocultar{
+    &__ocultar {
         display: none;
     }
 }
 
 @mixin enlace{
-        all: unset;
-        color: v.$blanco;
-        font-size: 1.4rem;
-        text-transform: uppercase;
-        font-weight: v.$bold;
-        
+    all: unset;
+    color: v.$blanco;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: v.$bold;
 
-        &:hover{
-            color: v.$azul;
-        }
+    &:hover {
+        color: v.$azul;
+        cursor: pointer;
+    }
 }
 
-@mixin shadow{
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+@mixin shadow {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-@mixin reset-lista{
+@mixin reset-lista {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-@mixin tags{
+@mixin tags {
     @include reset-lista;
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 1.5rem;
 
-    > li{
+    > li {
         background-color: v.$azul;
         padding: 1rem;
         border-radius: .5rem;
         font-size: 1.4rem;
-        color: v.$blanco;
         font-weight: v.$bold;
+        color: v.$blanco;
     }
 }
 
-@mixin card{
+@mixin card {
     border: 1px solid lighten(v.$gris, 10);
     padding: 3rem;
 
-    &__nombre{
+    &__nombre {
         font-weight: v.$black;
         font-size: 2.6rem;
         margin: 2rem 0;
     }
+}
+
+@mixin bg-gradient($bg_color) {
+    background-image: linear-gradient(to left top, $bg_color, lighten($bg_color, 15%));
 }
