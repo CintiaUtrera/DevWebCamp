@@ -183,7 +183,7 @@ class RegistroController{
                 echo json_encode(['resultado' => false]);
                 return;
             } 
-
+            $eventos_array = [];
             // Validar la disponib ilidad de los eventos seleccionados 
             foreach($eventos as $evento_id){
                 $evento = Evento::find($evento_id);
@@ -193,8 +193,17 @@ class RegistroController{
                     echo json_encode(['resultado' => false]);
                     return;
                 }
+                $eventos_array[] = $evento;
+            }
+
+            foreach($eventos_array as $evento){
+                $evento->disponibles -= 1;
+                $evento->guardar();
+                // almacer el registro
+                
             }
         }
+
 
             $router->render('registro/conferencias', [
                 'titulo' => 'Elige Workshops y Conferencias',
